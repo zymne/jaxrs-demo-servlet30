@@ -6,6 +6,16 @@
 
     <body>
         <h2>Welcome to Jersey Test Page</h2>
+        <a href="/api/test?q1=evgeni&q2=kliuchnikov">Test QueryParams</a><br/>
+        <a href="/api/test/evgeni/kliuchnikov">Test PathParams</a><br/>
+        <br/>
+        <form method="post" action="/api/user/create">
+            <label for="username">username: </label>
+            <input type="text" name="username" id="username"><br/>
+            <label for="password">password: </label>
+            <input type="text" name="password" id="password"><br/>
+            <button type="submit">submit</button>
+        </form>
     </body>
 
 </html>
