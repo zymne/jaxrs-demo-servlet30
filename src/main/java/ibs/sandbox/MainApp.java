@@ -63,6 +63,7 @@ public class MainApp extends ResourceConfig {
         realm.setUserPattern("CN={0},OU=Accounts,OU=TechUsersZPE,OU=ZPE,OU=eispd,DC=portal,DC=cbr,DC=ru");
         realm.setUserRoleName("memberOf");
         realm.setRoleBase("DC=cbr,DC=ru");
+        //дополнительная настройка для поиска ролей
         realm.setRoleName("cn");
         realm.setRoleSearch("(uniqueMember={0})");
 
@@ -84,6 +85,7 @@ public class MainApp extends ResourceConfig {
         SecurityConstraint secConstraint = new SecurityConstraint();
         secConstraint.addCollection(secCollection);
         secConstraint.addAuthRole("siteAdmin");
+        secConstraint.addAuthRole("eisl-IODViewers");
         restServiceContext.addConstraint(secConstraint);
 
         //Сервлет для Jersey (dispatcher)
